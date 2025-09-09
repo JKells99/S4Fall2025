@@ -19,21 +19,20 @@ A multi-stage application for managing pharmacy inventory, prescriptions, and pa
 - Deduct stock when prescriptions are created
 
 ### Skills
-- OOP: composition, inheritance for medication types
-- Collections: `Map` for inventory, `List` for prescriptions
-- JUnit + Maven for testing
+- OOP
+- Collections
+- JUnit
 
 ---
 
-## 🚀 Stage 2: Spring Boot API
+## 🚀 Stage 2: Spring Boot API + MYSQL DB
 
 ### Endpoints
 - `/medications`: CRUD + stock tracking
 - `/patients`: CRUD
-- `/prescriptions`: issue & view prescriptions
+- `/prescriptions`: issue & view/process prescriptions
 
 ### Enhancements
-- H2 → PostgreSQL migration
 - Validation: no negative stock, patient must exist to create prescription
 - Testing: unit tests + integration tests (MockMVC/Testcontainers)
 
@@ -46,7 +45,7 @@ A multi-stage application for managing pharmacy inventory, prescriptions, and pa
 - Patients: list, add, update
 - Prescriptions: create prescription (dropdown for meds & dosage), view history
 
-### Extras
+### Extras For Fun If Time Allows
 - Low-stock warning banner
 - Search medications by name
 - Patient prescription history view
@@ -57,30 +56,21 @@ A multi-stage application for managing pharmacy inventory, prescriptions, and pa
 
 ### Roles & Auth
 - Pharmacist: manages stock
-- Doctor: prescribes meds
 - Patient: views prescriptions
 
 ### Reports
 - "Top prescribed medications" chart
-- "Patients with most prescriptions" dashboard
+- "Patient perscription overview (shows patient info)
 
 ### Deployment
-- Backend: Heroku/Render/AWS
-- Frontend: Vercel/Netlify
-- CI/CD + PR workflow
+- Backend:AWS
+- Frontend: AWS
+- PR workflow in GitHub with GH actions set up
 
 ---
-
-## Getting Started
-1. Clone the repository
-2. Build with Maven: `mvn clean install`
-3. Run tests: `mvn test`
-4. For Spring Boot: `mvn spring-boot:run`
-5. For frontend (Stage 3+): see `/frontend` folder
-
 ## License
 MIT
 
-## Author
-Jordan
+## Purpose Of This Repo
+- This will provide a good example for S4 students at Keyin College SD Program
 
