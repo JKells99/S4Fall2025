@@ -161,6 +161,7 @@ public class Patient {
             if(medication.getMedDosage() != null){
                 for(Medication med : this.medications){
                     if(med.getMedName().equals(medication.getMedName()) && !med.getMedDosage().equals(medication.getMedDosage())){
+                        removeMedication(med);
                         return true;
                     }
                 }
@@ -180,11 +181,22 @@ public class Patient {
     public void addMedication(Medication medication) {
         if (!this.medications.contains(medication)) {
             if(doseCheckerForNewScriptToSignalDoseChange(medication)){
-                System.out.println("Warning: This medication has a different dosage than the existing one. Please review the dosage change.");
+                System.out.println("Warning This IS A DOSAGE CHANGE for patient: " + patientName + " New Dosage: " + medication.getMedDosage() + " Previous Dosage: " + medication.getMedDosage() + " for medication: " + medication.getMedName() );
             }
             this.medications.add(medication);
         } else {
             System.out.println("Medication already exists for this patient. Please Update Refils instead.");
+        }
+    }
+
+    public void printMedications() {
+        if (medications.isEmpty()) {
+            System.out.println("No medications for this patient.");
+        } else {
+            System.out.println("Medications for patient " + patientName + ":");
+            for (Medication med : medications) {
+                System.out.println("- " + med.getMedName() + " (" + med.getMedDosage() + ")");
+            }
         }
     }
 
