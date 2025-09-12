@@ -26,7 +26,11 @@ A multi-stage application for managing pharmacy inventory, prescriptions, and pa
 ---
 
 ## 🚀 Stage 2: Spring Boot API + MYSQL DB
-
+## Start the refactor to a Spring Boot backend with a MySQL database
+- Add needed dependencies to `pom.xml`
+- Set up MySQL database and configure Spring Data JPA
+- Create RESTful controllers, services, and repositories for each entity
+- Added needed annotations for entity relationships, and what is needed for JPA (e.g., OneToMany, ManyToOne)
 ### Endpoints
 - `/medications`: CRUD + stock tracking
 - `/patients`: CRUD
