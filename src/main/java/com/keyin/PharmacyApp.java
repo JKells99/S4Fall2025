@@ -1,3 +1,10 @@
+/*
+ * PharmacyApp.java
+ * Main application class for the Pharmacy Management System.
+ * Author: Jordan Kelloway
+ * Date: September 12, 2025
+ */
+
 package com.keyin;
 
 import com.keyin.medication.MedType;
@@ -8,6 +15,10 @@ import com.keyin.prescription.Prescription;
 import java.util.List;
 
 public class PharmacyApp {
+    /**
+     * Main entry point for the Pharmacy Management System application.
+     * @param args command-line arguments
+     */
     public static void main(String[] args) {
         // Create 10 Med objects
         Medication med1 = new Medication(1L, "Aspirin", "500mg", 1000, MedType.ACE_INHIBITOR);
@@ -39,6 +50,12 @@ public class PharmacyApp {
         Prescription prescription4 = new Prescription(4L, patient1, med1, "Take one tablet every 8 hours as needed for inflammation.", "Dr. David Blue",90);
         Prescription prescription5 = new Prescription(5L, patient2, med2, "Take one tablet every 8 hours as needed for inflammation.", "Dr. David Blue",90);
 
+        // Process the prescriptions
+        prescription1.processPrescription();
+        prescription2.processPrescription();
+        prescription3.processPrescription();
+        prescription4.processPrescription();
+        prescription5.processPrescription();
         System.out.println(patient1.getMedications());
         System.out.println("Welcome to the Pharmacy Management System!");
 

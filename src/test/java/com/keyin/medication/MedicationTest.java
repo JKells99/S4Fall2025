@@ -37,4 +37,29 @@ public class MedicationTest {
         med.setMedStockQuantity(150);
         Assertions.assertEquals(150, med.getMedStockQuantity());
     }
+
+    @Test
+    void testMedicationToString() {
+        Medication med = new Medication(3, "Amoxicillin", "250mg", 75, MedType.ANTIBIOTIC);
+        String expected = "Medication{medId=3, medName='Amoxicillin', medDosage='250mg', medStockQuantity=75, medType=ANTIBIOTIC}";
+        Assertions.assertEquals(expected, med.toString());
+    }
+
+    @Test
+    void testMedicationEquality() {
+        Medication med1 = new Medication(4, "Lisinopril", "10mg", 60, MedType.ACE_INHIBITOR);
+        Medication med2 = new Medication(4, "Lisinopril", "20mg", 60, MedType.ACE_INHIBITOR);
+
+        Assertions.assertNotEquals(med1.getMedDosage(), med2.getMedDosage());
+
+    }
+    @Test
+    void testStockQuantityCannotBeNegative() {
+        Medication med = new Medication("TestMed", "100mg", 10, MedType.VITAMIN);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            med.setMedStockQuantity(-5);
+        });
+    }
+
+
 }

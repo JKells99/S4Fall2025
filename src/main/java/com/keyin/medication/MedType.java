@@ -1,3 +1,10 @@
+/*
+ * MedType.java
+ * Enum representing types of medications in the pharmacy system.
+ * Author: Jordan Kelloway
+ * Date: September 12, 2025
+ */
+
 package com.keyin.medication;
 
 public enum MedType {
